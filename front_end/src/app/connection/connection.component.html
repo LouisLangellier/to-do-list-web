@@ -1,0 +1,24 @@
+<div class="center">
+  <mat-card>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        placeholder="xxx@gmail.com"
+        [formControl]="email"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input
+        matInput
+        placeholder="***********"
+        [formControl]="email"
+        required
+      /> 
+    </mat-form-field>
+    <div class="example-button-row">
+      <button mat-raised-button>Connexion</button>
+    </div>
+  </mat-card>
+</div>
