@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConnectionComponent } from './connection/connection.component';
-import { HomeComponent } from './home/home.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: 'sidebar', component: SideBarComponent},
   {path: 'connection', component: ConnectionComponent}
 ];
 

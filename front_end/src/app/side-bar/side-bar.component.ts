@@ -9,6 +9,5 @@ export class SideBarComponent {
 
   constructor(){}
 
-  
 
 }
