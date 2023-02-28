@@ -17,18 +17,25 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { HomeComponent } from './home/home.component';
 import { TaskComponent } from './task/task.component';
 import { ConnectionComponent } from './connection/connection.component';
+import { BodyComponent } from './body/body.component';
+import { HomeComponent } from './home/home.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { AccountComponent } from './account/account.component';
+import { TodayComponent } from './today/today.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideBarComponent,
-    HomeComponent,
     TaskComponent,
     ConnectionComponent,
+    BodyComponent,
+    HomeComponent,
+    CategoriesComponent,
+    AccountComponent,
+    TodayComponent,
   ],
   imports: [
     BrowserModule,

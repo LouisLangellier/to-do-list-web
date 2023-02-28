@@ -23,3 +23,11 @@ mat-form-field {
 mat-card {
     padding: 15px;
 }
+
+.change {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    cursor: pointer;
+}

@@ -1,19 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { AuthService } from 'src/services/auth.service';
 
 
+interface SideNavToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  constructor (private router: Router){}
+  title = "To Do List"
 
-  ngOnInit(): void {
-    this.router.navigate(['/connection'])    
+  isSideNavCollapsed = false;
+  screenWidth = 0;
+
+  constructor(private auth: AuthService) {
+
   }
 
-  title = 'To Do List';
+  onToggleSideNav(data: SideNavToggle) {
+    this.screenWidth = data.screenWidth;
+    this.isSideNavCollapsed = data.collapsed;
+  }
+
+  isConnected(){
+    return this.auth.getIsConnected()
+  }
+  
 }
