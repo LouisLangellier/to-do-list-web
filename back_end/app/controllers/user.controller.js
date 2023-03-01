@@ -14,7 +14,8 @@ exports.create = (req, res) => {
 
   UserDB.create({
     email: req.body.email,
-    mdp: req.body.mdp,
+    username: req.body.username,
+    password: req.body.password
   })
     .then((data) => {
       res.send(data);
