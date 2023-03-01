@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   isConnected = false
+  uid!: string
 
   constructor() { }
 
@@ -17,8 +18,20 @@ export class AuthService {
     return this.isConnected;
   }
 
-  addNewUser(email: string, password: string, pseudo: string){
-    
+  addUser(email: string, password: string, pseudo: string){
+
     this.setIsConnected()
+  }
+
+  connect(email: string, password: string){
+    this.setIsConnected()
+  }
+
+  setUid(uid: string){
+    this.uid = uid
+  }
+
+  getUid(){
+    return this.uid;
   }
 }

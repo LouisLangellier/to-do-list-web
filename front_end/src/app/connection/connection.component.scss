@@ -4,30 +4,49 @@ mat-form-field {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 0.625rem;
 }
 
 .center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
 
 .example-button-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    color: #263238;
+  }
 }
 
 mat-card {
-    padding: 15px;
+  padding: 15px;
+}
+
+span {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .change {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 15px;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  color: white;
+}
+
+mat-toolbar {
+  background-color: #263238;
+  color: white;
+}
+
+mat-card {
+    background-color: #263238;
 }

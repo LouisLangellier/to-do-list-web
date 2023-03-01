@@ -13,6 +13,8 @@ app.use(express.json())
 
 app.use(express.urlencoded({extended: true}))
 
+require("./app/routes/user.routes")(app)
+
 const db = require("./app/models")
 db.mongoose.connect(db.url, {
     useNewUrlParser: true,

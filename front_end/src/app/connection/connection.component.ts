@@ -59,12 +59,11 @@ export class ConnectionComponent {
     if(this.signUp){
       if(this.email.valid && this.password.valid && this.confirmPassword.valid && this.pseudo.valid){
         const pass = Md5.hashStr(this.password.value!)
-        if(this.signUp){
-          this.auth.addNewUser(this.email.value!, pass, this.pseudo.value)
-        }
+        this.auth.addUser(this.email.value!, pass, this.pseudo.value)
       }
     } else if(this.email.valid && this.password.valid){
-      //connect
+      const pass = Md5.hashStr(this.password.value!)
+      this.auth.connect(this.email.value!, pass)
     }
   }
 }

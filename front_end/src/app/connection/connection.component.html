@@ -3,7 +3,7 @@
 </mat-toolbar>
 <div class="center">
   <mat-card>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" *ngIf="signUp">
       <mat-label>Entrez votre prénom</mat-label>
       <input matInput [formControl] = "pseudo" />
     </mat-form-field>
@@ -39,10 +39,10 @@
       <button mat-raised-button (click)="connect()">Inscription</button>
     </div>
     <div class="change" *ngIf="!signUp">
-      <mat-label (click)="setSignUp()">Pas encore de compte ? Créez-en un !</mat-label>
+      <mat-label>Pas encore de compte ? <span (click)="setSignUp()">Créez-en un !</span></mat-label>
     </div>
     <div class="change" *ngIf="signUp">
-      <mat-label (click)="setSignUp()">Déjà compte ? Connectez-vous !</mat-label>
+      <mat-label>Déjà compte ? <span (click)="setSignUp()">Connectez-vous !</span></mat-label>
     </div>
   </mat-card>
 </div>
