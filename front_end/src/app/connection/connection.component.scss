@@ -1,5 +1,6 @@
 mat-form-field {
   margin-left: 8px;
+  margin-right: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,4 +54,8 @@ mat-toolbar {
   background-color: #ef5350;
   color: white;
 
+}
+
+.card-connect {
+  border-radius: 0.625rem;
 }

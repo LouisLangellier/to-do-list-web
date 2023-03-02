@@ -1,0 +1,16 @@
+.title-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+button {
+    background-color: #263238;
+    color: white;
+    border-radius: 0.625rem;
+}
