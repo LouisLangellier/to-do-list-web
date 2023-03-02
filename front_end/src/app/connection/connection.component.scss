@@ -27,6 +27,7 @@ mat-form-field {
 
 mat-card {
   padding: 15px;
+  background-color: #263238;
 }
 
 span {
@@ -47,6 +48,9 @@ mat-toolbar {
   color: white;
 }
 
-mat-card {
-    background-color: #263238;
+.card-error {
+  margin-top: 20px;
+  background-color: #ef5350;
+  color: white;
+
 }

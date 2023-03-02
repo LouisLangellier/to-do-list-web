@@ -2,11 +2,15 @@ module.exports = app => {
 
     const users = require("../controllers/user.controller")
 
-    let router = require("express").Router();
+    let router = require("express").Router()
 
-    router.post("/", users.create);
+    router.post("/", users.create)
 
-    router.get("/", users.findAll);
+    router.get("/", users.findAll)
+
+    router.get("/email/:email", users.findByEmail)
+
+    router.get("/email/:email/password/:password", users.findByEmailAndPassword)
 
     router.get("/:id", users.findOne)
 

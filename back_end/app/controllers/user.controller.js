@@ -76,23 +76,44 @@ exports.findOne = (req, res) => {
     });
 };
 
-exports.findByMail = (req, res) => {
-  const userMail = req.params.userMail;
+exports.findByEmail = (req, res) => {
+  const email = req.params.email;
 
-  var condition = userMail
-    ? { email: { $regex: new RegExp(userMail), $options: "i" } }
+  var condition = email
+    ? { email: { $regex: new RegExp(email), $options: "i" } }
     : {};
 
   UserDB.find(condition)
     .then((data) => {
       if (!data)
-        res.status(404).send({ message: "Liste de films non trouvée " + userMail });
+        res.status(404).send({ message: `Aucun utilisateur trouvé avec le mail ${email}` });
       else res.send(data);
     })
     .catch((err) => {
       res
         .status(500)
-        .send({ message: "Erreur pendant la récupération de la liste " + userMail });
+        .send({ message: "Erreur pendant la récupération de l'utilisateur " + userMail });
+    });
+};
+
+exports.findByEmailAndPassword = (req, res) => {
+  const email = req.params.email;
+  const password = req.params.password;
+
+  var condition = email && password
+    ? { email: { $regex: new RegExp(email), $options: "i" }, password: {$regex: new RegExp(password), $options: "i"} }
+    : {};
+
+  UserDB.find(condition)
+    .then((data) => {
+      if (!data)
+        res.status(404).send({ message: `Aucun utilisateur trouvé avec les informations ${email} ${password}` });
+      else res.send(data);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send({ message: "Erreur pendant la récupération de l'utilisateur " + userMail });
     });
 };
 

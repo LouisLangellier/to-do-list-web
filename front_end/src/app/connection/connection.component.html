@@ -33,10 +33,10 @@
       <mat-error *ngIf="confirmPassword.invalid">{{ getConfirmPasswordErrorMessage() }}</mat-error>
     </mat-form-field>
     <div class="example-button-row" *ngIf="!signUp">
-      <button mat-raised-button (click)="connect()">Connexion</button>
+      <button mat-raised-button (click)="connect()" (keyup.enter)="connect()">Connexion</button>
     </div>
     <div class="example-button-row" *ngIf="signUp">
-      <button mat-raised-button (click)="connect()">Inscription</button>
+      <button mat-raised-button (click)="connect()" (keyup.enter)="connect()">Inscription</button>
     </div>
     <div class="change" *ngIf="!signUp">
       <mat-label>Pas encore de compte ? <span (click)="setSignUp()">Créez-en un !</span></mat-label>
@@ -44,5 +44,14 @@
     <div class="change" *ngIf="signUp">
       <mat-label>Déjà compte ? <span (click)="setSignUp()">Connectez-vous !</span></mat-label>
     </div>
+  </mat-card>
+
+  <mat-card class="card-error" *ngIf="errorMessage">
+    <mat-card-header>
+      <mat-card-title>Erreur</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{errorMessage}}</p>
+    </mat-card-content>
   </mat-card>
 </div>

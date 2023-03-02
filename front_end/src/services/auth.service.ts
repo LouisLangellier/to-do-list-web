@@ -36,6 +36,24 @@ export class AuthService {
     return this.uid;
   }
 
+  existingEmail(email: string): Promise<boolean> {
+    const url = `http://localhost:8080/api/users/email/${email}`;
+  
+    return fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        if (data[0] == undefined) {
+          return false;
+        } else {
+          return true;
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        return false;
+      });
+  }
+
   addUser(email: string, password: string, username: string){
     console.log(email, password, username)
     const options = {
@@ -64,7 +82,24 @@ export class AuthService {
     })
   }
 
-  connect(email: string, password: string){
-    this.setIsConnected()
+  connect(email: string, password: string): Promise<boolean>{
+    const url = `http://localhost:8080/api/users/email/${email}/password/${password}`;
+  
+    return fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        if (data[0] == undefined) {
+          return false
+        } else {
+          this.setIsConnected()
+          this.setUid(data[0]._id)
+          this.setUsername(data[0].username)
+          return true
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        return false
+      });
   }
 }
