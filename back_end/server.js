@@ -19,6 +19,8 @@ app.use(function (req, res, next) {
 });
 
 require("./app/routes/user.routes")(app);
+require("./app/routes/task.routes")(app);
+require("./app/routes/category.routes")(app);
 
 const db = require("./app/models");
 db.mongoose

@@ -33,12 +33,8 @@ exports.create = (req, res) => {
  * @param res revoie le status des requêtes
  */
 exports.findAll = (req, res) => {
-  const email = req.query.email;
-  var condition = email
-    ? { email: { $regex: new RegExp(email), $options: "i" } }
-    : {};
 
-  UserDB.find(condition)
+  UserDB.find({})
     .then((data) => {
       res.send(data);
     })

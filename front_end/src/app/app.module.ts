@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,11 +18,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskComponent } from './task/task.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { BodyComponent } from './body/body.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent, NewTaskDialog } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AccountComponent } from './account/account.component';
 import { TodayComponent } from './today/today.component';
@@ -35,6 +36,7 @@ import { TodayComponent } from './today/today.component';
     ConnectionComponent,
     BodyComponent,
     HomeComponent,
+    NewTaskDialog,
     CategoriesComponent,
     AccountComponent,
     TodayComponent,
@@ -55,6 +57,7 @@ import { TodayComponent } from './today/today.component';
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
+    MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
   ],

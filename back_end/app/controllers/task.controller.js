@@ -27,9 +27,24 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  const title = req.query.title;
-  var condition = title
-    ? { title: { $regex: new RegExp(title), $options: "i" } }
+
+  TaskDB.find({})
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.send(500).send({
+        message:
+          err.message ||
+          "Une erreur est survenue pendant la récupération des tâches.",
+      });
+    });
+};
+
+exports.findAllOfUser = (req, res) => {
+  const uid = req.params.uid;
+  let condition = uid
+    ? { uid: { $regex: new RegExp(uid), $options: "i" } }
     : {};
 
   TaskDB.find(condition)
@@ -49,7 +64,7 @@ exports.findOne = (req, res) => {
   const uid = req.params.uid;
   const title = req.params.title;
 
-  var condition =
+  let condition =
     uid && title
       ? { uid: uid, title: title}
       : {};
@@ -76,6 +91,8 @@ exports.update = (req, res) => {
     const title = req.params.title
     const description = req.params.description
     const category = req.params.category
+    const status = req.params.status
+    const date = req.params.date
     const done = req.params.done
 
 
