@@ -19,6 +19,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskComponent } from './task/task.component';
 import { ConnectionComponent } from './connection/connection.component';
@@ -58,6 +61,9 @@ import { TodayComponent } from './today/today.component';
     MatInputModule,
     MatExpansionModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
   ],

@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   existingEmail(email: string): Promise<boolean> {
-    const url = `http://localhost:8080/api/users/email/${email}`;
+    const url = `http://localhost:8080/api/user/email/${email}`;
   
     return fetch(url)
       .then(response => response.json())
@@ -64,7 +64,7 @@ export class AuthService {
       body: JSON.stringify({email: email, password: password, username: username})
     };
 
-    const url = "http://localhost:8080/api/users";
+    const url = "http://localhost:8080/api/user";
 
     fetch(url, options).then(response => {
       if(response.ok){
@@ -83,7 +83,7 @@ export class AuthService {
   }
 
   connect(email: string, password: string): Promise<boolean>{
-    const url = `http://localhost:8080/api/users/email/${email}/password/${password}`;
+    const url = `http://localhost:8080/api/user/email/${email}/password/${password}`;
   
     return fetch(url)
       .then(response => response.json())
