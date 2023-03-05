@@ -12,6 +12,8 @@ exports.create = (req, res) => {
     title: req.body.title,
     description: req.body.description,
     category: req.body.category,
+    status: req.body.status,
+    date: req.body.date,
     done: req.body.done,
   })
     .then((data) => {
